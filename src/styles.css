@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+}
+.sidebar {
+    grid-column: 1 / 2;
+    background-color: white;
+    display: flex;
+    position: relative;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.title {
+    padding: 20px;
+}
+
+.projects {
+    list-style-type: none;
+    flex-grow: 1;
+}
+
+.project {
+    background-color: peachpuff;
+    margin: 10px 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.project:hover {
+    background-color: papayawhip;
+}
+
+.selected {
+    background-color: sandybrown;
+}
+
+.edit-icon, .delete-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.edit-icon:hover {
+    color: #007bff;
+
+}
+
+.delete-icon:hover {
+    color: #ff4d4d;
+}
+
+.newProj {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    padding: 10px 15px;
+    font-size: large;
+    white-space: nowrap;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.newProj:hover {
+    background-color: lightgrey;
+}
+
+.main {
+    grid-column: 2 / 3;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+}
+
+.newTodo {
+    position: absolute;
+    padding: 10px 15px;
+    font-size: large;
+    white-space: nowrap;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.newTodo:hover {
+    background-color: lightgrey;
+}
+.todos {
+    list-style: none;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.todo {
+    margin: 10px 0; 
+    padding: 15px; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; 
+    position: relative; 
+    border-style: solid none;
+    padding-right: 60px;
+}
+
+.todo:hover {
+    background-color: #f0f0f0; 
+}
+
+.todo .edit-icon,
+.todo .delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.todo .edit-icon:hover {
+    color: #007bff;
+
+}
+
+.todo .delete-icon:hover {
+    color: #ff4d4d;
+}
+
+.todo .edit-icon {
+    right: 40px; 
+}
+
+.todos h1 {
+    padding: 10px;
+    margin: 10px 0; 
+    text-align: left; 
+    border-radius: 5px; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    word-break: break-word;
+    white-space: normal;
+    max-width: 100%;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.todo-checkbox {
+    margin-right: 10px; 
+    cursor: pointer;
+}
+
+.todo-title {
+    font-size: 1.2em;
+    word-wrap: break-word;  
+    overflow-wrap: break-word; 
+    white-space: normal;
+    word-break: break-word;
+    max-width: calc(100% - 40px); 
+    padding-right: 40px; 
+}
+
+.todo-date {
+    display: block;
+    color: blue;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.todo-priority {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.priority-low {
+    color: green;
+}
+
+.priority-medium {
+    color: #ffbf00;
+}
+
+.priority-high {
+    color: red;
+}
+
+.todo-form-container {
+    display: none;
+    position: fixed; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.exit-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+}
+
+.exit-btn:hover {
+    color: #f00; 
+}
+
+.todo-form-container.visible {
+    display: flex;
+}
+
+.todo-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
